@@ -1,0 +1,45 @@
+.adminpanel{
+    margin-top: 80px;
+    padding: 50px;
+}
+
+.select-item{
+    min-width: 222px !important;
+}
+
+.Table{
+    /* border: 1px solid red; */
+    margin: 0 auto;
+}
+
+.discription{
+    min-width: 700px !important;
+}
+
+.table-img{
+    display: block;
+    width: 100px;
+    height: 100px;
+}
+
+.table-img img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+.edit-icon, .delete-icon{
+    margin: 0 10px;
+}
+
+.edit-icon{
+    color: green;
+}
+
+.edit-icon:hover ,.delete-icon:hover{
+    cursor: pointer;
+}
+
+.delete-icon{
+    color: rgb(224, 6, 6);
+}

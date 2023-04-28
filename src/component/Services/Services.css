@@ -1,0 +1,22 @@
+
+
+.services{
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+    margin-top: 100px;
+    /* border: 1px solid red; */
+}
+
+/* .service-card{
+    width: 30%;
+    border: 1px solid red;
+} */
+
+.service-card-heading{
+    margin-top: 10px;
+}
+.service-card-subheading{
+    margin: 0 auto;
+    margin-top: 15px;
+}

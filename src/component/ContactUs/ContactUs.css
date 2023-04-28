@@ -1,0 +1,153 @@
+.contactus{
+    padding: 50px 0px;
+    background-color: #f3f3f3;
+    margin-top: 100px;
+}
+
+.contactus-heading{
+    display: inline-block;
+    margin: 0 auto;
+    font-weight: bold;
+}
+.contactus-heading h2{
+    color: black;
+   border-bottom: 1px solid rgb(0, 0, 0);
+}
+
+.get-in-touch {
+    /* background: transparent; */
+    /* position: fixed;                                                                                                                                                         */
+    /* background: linear-gradient(90deg, rgba(255, 0, 107, 0.4) 0%, rgba(0, 10, 255, 0.4) 100%), url(../photos/unsplash_PhYq704ffdA.png); */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;   
+    background-attachment: fixed;
+    padding: 60px 0;
+    overflow: hidden;
+    
+    /* min-height: 650px; */
+
+}
+
+.founder p{
+    margin: 0;
+}   
+
+.contactus-content{
+    margin-top: 50px;
+}
+
+.founder img{
+    width: 120px;
+    border: 5px solid white;
+    border-radius: 50%;
+}
+
+.company-email {
+    max-width: 450px;
+    /* background-color: rgb(215, 220, 250); */
+    background-color: white;
+    border-radius: 10px;
+    line-height: 10px;
+    display: flex;
+    padding: 15px 20px; 
+}
+
+.company-email p,.company-skype p,.company-call p{
+    margin: 0;
+}
+
+.company-call, .company-email, .company-skype:hover{
+    cursor: pointer;
+} 
+
+.email {
+    color: #AB0000;
+}
+
+.call {
+    color: #03B31F;
+}
+
+.skype {
+    color: #22A2FF;
+}
+
+.get-in-touch-box {
+    /* margin: auto; */
+    border-left: 2px solid #AB0000;
+
+}
+
+.get-in-touch-box p {
+    margin-left: 20px;
+}
+
+.company-skype {
+    max-width: 450px;
+    /* background-color: rgb(250, 215, 215); */
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    padding: 15px 20px;
+}
+.company-call {
+    max-width: 450px;
+    /* background-color: antiquewhite; */
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    padding: 15px 20px;
+}
+
+.get-in-touch-from {
+    max-width: 600px;
+    /* background-color: white; */
+    border-radius: 10px;
+    padding: 40px;
+    margin: 0 auto;
+
+}
+
+/* .get-in-touch-from input{
+    border: none;
+    border-radius: 0;
+    background-color: transparent;
+    border-bottom: 2px solid black;
+} */
+
+.placeholder-text {
+    padding: 12px;
+    font-size: 14px;
+
+}
+
+sup{
+    top: 0.3rem;
+    vertical-align: super;
+    font-size: medium;
+}
+
+.name-section,
+.email-section,
+.phone-section,
+.message-section{
+    margin-bottom: 20px;
+}
+
+.enquiry-button{
+    color: white;
+    max-width: 300px;
+    margin: 0 auto;
+    margin-top: 25px;
+    transition: transform 0.2s;
+}
+
+.enquiry-button:hover{
+    transform: scale(1.1);
+}
+
+.get-in-touch-btn{
+    color: white;
+    background: linear-gradient(90deg,#0075FF 0.01%, #380094 100%);
+}

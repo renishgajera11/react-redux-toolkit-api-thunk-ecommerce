@@ -11,8 +11,14 @@ import Electronics from './component/Electronics/Electronics';
 import WishList from './component/WishList/WishList';
 import CartList from './component/CartList/CartList';
 import AdminPanel from './component/Admin/AdminPanel';
+import { useEffect } from 'react';
+import Register from './component/Register/Register';
 
 function App() {
+
+  useEffect(() => {
+    window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+  }, []);
   return (
     <div className="App">
 
@@ -27,7 +33,10 @@ function App() {
                   <Route path="/wishlist" element={<WishList/>} />
                   <Route path="/cartlist" element={<CartList/>} />
                   <Route path="/admin" element={<AdminPanel/>} />
+                  <Route path="/register" element={<Register/>} />
         </Routes>
+
+        
 
     </div>
   );

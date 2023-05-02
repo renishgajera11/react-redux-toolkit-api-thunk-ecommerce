@@ -49,8 +49,8 @@
 
 .close-button {
     position: absolute;
-    right: 0px;
-    top: 0px;
+    right: 20px;
+    top: 10px;
     font-size: 18px;
 }
 
@@ -78,7 +78,9 @@
     max-width: 800px;
     padding: 20px 0px;
     margin: 20px auto;
-    border-bottom: 2px solid rgb(212, 212, 212);
+    border-radius: 20px;
+    background-color: white;
+    /* border-bottom: 2px solid rgb(212, 212, 212); */
 }
 
 .cartlist-img {

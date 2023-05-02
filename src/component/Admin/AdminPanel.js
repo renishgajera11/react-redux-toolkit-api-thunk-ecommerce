@@ -163,6 +163,8 @@ console.log(categorys);
                                         InputLabelProps={{
                                         shrink: true,
                                         }} 
+                                        className='bg-color'
+                                       
                                         value={title} onChange={(e) => setTitle(e.target.value)} />
                                 </td>
                                 <td className='p-3'>
@@ -173,7 +175,7 @@ console.log(categorys);
                                         value={categorys}
                                         // defaultValue="select"
                                         onChange={(e) => setCategorys(e.target.value)}
-                                        className='select-item'
+                                        className='select-item bg-color'
 
                                     >
                                         {category.map((option) => (
@@ -188,11 +190,12 @@ console.log(categorys);
                                         id="outlined-basic" 
                                         label="Discription" 
                                         variant="outlined" 
-                                        className='discription'
+                                        className='discription bg-color'
                                         placeholder="Discription"
                                         InputLabelProps={{
                                         shrink: true,
                                         }} 
+                                       
                                         value={discription} onChange={(e) => setDiscription(e.target.value)} />
                                 </td>
                             </tr>
@@ -208,6 +211,7 @@ console.log(categorys);
                                         InputLabelProps={{
                                         shrink: true,
                                         }}
+                                        className='bg-color'
                                         value={price} onChange={(e) => setPrice(e.target.value)} />
                                 </td>
                                 <td className='p-3'>
@@ -219,6 +223,7 @@ console.log(categorys);
                                         InputLabelProps={{
                                         shrink: true,
                                         }} 
+                                        className='bg-color'
                                         value={rate} onChange={(e) => setRate(e.target.value)} />
                                 </td>
                                 <td className='p-3'>
@@ -230,6 +235,7 @@ console.log(categorys);
                                         InputLabelProps={{
                                         shrink: true,
                                         }} 
+                                        className='bg-color'
                                         value={count} onChange={(e) => setCount(e.target.value)} />
                                 </td>
                                 <td className='p-3'>

@@ -14,7 +14,7 @@ const Services = () => {
 
             <div className='services'>
 
-            <Slide cascade damping={0.1}>
+            <>
 
                 <div className='service-card'>
 
@@ -24,7 +24,7 @@ const Services = () => {
 
                 </div>
 
-                </Slide>
+                </>
 
                 
 

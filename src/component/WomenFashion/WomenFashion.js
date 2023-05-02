@@ -39,14 +39,14 @@ const WomenFashion = () => {
 
               <div className='product-heading'><h2>Women fashion</h2></div>
 
-              <div className='product-container'>
+              <div className='product-container row'>
 
                   { loading? (<div className='loading'>Please wait...</div>):
                       data.filter(element=>element.category == "women's clothing").map((element) => {
                           return (
 
 
-                              <div className='product-card'>
+                              <div className='product-card col-lg-4'>
 
                                   <span className='icon' onClick={() => activeHandler(element)}>
                                       {WishlistItems.some((i) => i.id === element.id) ? (<i className="fa-solid fa-heart red" />) : (<i className="fa-regular fa-heart red" />)}

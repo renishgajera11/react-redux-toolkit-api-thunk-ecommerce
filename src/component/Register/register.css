@@ -1,0 +1,17 @@
+.register{
+    max-width: 1500px;
+    margin:0 auto;
+    margin-top: 80px;
+    /* border: 1px solid red; */
+   
+}
+
+.form{
+    width: 100%;
+    /* border: 1px solid blue !important; */
+}
+
+.Table{
+    margin:0 auto;
+    /* border: 1px solid red;    */
+}

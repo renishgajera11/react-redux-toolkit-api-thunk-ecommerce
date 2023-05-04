@@ -6,41 +6,30 @@ import IconButton from '@mui/material/IconButton';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import { Button } from '@mui/material';
-import './register.css'
+import '../Register/register.css'
 import { useDispatch } from 'react-redux';
-import { registerUser } from '../../app/slice/authSlice';
-import registerimg from '../../Images/register-img.png' 
-import { Link } from 'react-router-dom';
+import loginimg from '../../Images/login-img.png' 
+import { Link, Navigate } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import { addItem } from '../../app/slice/loginSlice';
 
-
-const Register = () => {
+const Login = () => {
 
     const {user} = useSelector((state)=>state.register)
     console.log(user);
 
-    const [name, setName] = useState()
     const [number, setNumber] = useState()
     const [password, setPassword] = useState()
-    const [cnfpassword, setCnfPassword] = useState()
     const [showPassword, setShowPassword] = useState(false);
-    const [showcnfPassword, setShowcnfPassword] = useState(false);
 
     const handleClickShowPassword = () => setShowPassword((show) => !show);
-    const handleClickShowcnfPassword = () => setShowcnfPassword((show) => !show);
 
-    const userDetail = { name: name, number: number, password: password }
+    const userLoginDetail = { number: number, password: password }
 
     const dispatch = useDispatch()
     const navigate = useNavigate()
 
-    const handleChangeName = (e) => {
-        const regex = /^[A-Za-z]+$/;
-        if (e.target.value === "" || regex.test(e.target.value)) {
-          setName(e.target.value);
-        }
-      };
     const handleChangeNumber = (e) => {
         const regex = /^[0-9\b]+$/;
         if (e.target.value === "" || regex.test(e.target.value)) {
@@ -49,7 +38,7 @@ const Register = () => {
       };
     const handleChangePassword = (e) => {
         const regex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,12}$/;
-        if (e.target.value === "" || regex.test(e.target.value)) {
+        if (e.target.value === "" || regex.test(e.target.value)) {  
           setPassword(e.target.value);
         }
       };
@@ -57,32 +46,27 @@ const Register = () => {
 
     const submitHandler = (e) => {
         e.preventDefault();
-        if (!name || !number || !password || !cnfpassword) {
+        if ( !number || !password ) {
             alert('insert data')
-        }else if(!(password === cnfpassword)){
-            alert('password not matched')
-        } else{
+        
+        } else {
 
-            if(user){
-                const checkNumber = user.filter((element)=>{
-                    return element.number==number
-                });
-
-                if(checkNumber.length !== 0){
-                    alert('mobile number already register')
+            if(user && user.length){
+                const checkUser = user.filter((element)=>{
+                    return element.number === number && element.password === password
+                            
+                });console.log(checkUser);
+                if(checkUser.length === 0){
+                    alert("invalid user")
                 }else{
-                    dispatch(registerUser(userDetail))
-                    setName('');
+                   dispatch(addItem(checkUser))
                     setNumber('')
                     setPassword('')
-                    setCnfPassword('')
-                    navigate('/login') 
+                    navigate('/')
                 }
             }
 
 
-
-            
         }
     }
 
@@ -95,38 +79,17 @@ const Register = () => {
 
             <div className='container register-container'>
 
-                <div className='register-img'><img src={registerimg}></img></div>
-
                 <FormControl required className='form'>
-
-                    <table className='Table'>
 
                     
 
+                    <table className='Table'>
+
                         <tbody>
-                            <tr>
-                                <td className='text-center p-4'><h2>Register</h2></td>
-                            </tr>
-                            <tr>
-                                <td className='p-3'>
-                                    <TextField
-                                        id="outlined-basic"
-                                        label="Name"
-                                        autoComplete='off'
-                                        variant="outlined"
-                                        className='bg-color field'
-                                        placeholder="Enter Name"
-                                        InputLabelProps={{
-                                            shrink: true,
-                                        }}
-                                        InputProps={{ pattern: "[a-z]" }}
 
-                                        value={name} onChange={(e) => handleChangeName(e)}
-                                    />
-                                </td>
-
-                                
-                            </tr>
+                        <tr>
+                            <td className='text-center p-4'><h2>Log In</h2></td>
+                        </tr>
 
                             <tr>
                             <td className='p-3' >
@@ -181,53 +144,15 @@ const Register = () => {
                                     
                                 </td>
 
-
-
-                               
-
                             </tr>
-
-                            <tr>
-                            <td className='p-3'>
-                                
-                                <TextField
-                                    id="outlined-adornment-password"
-                                    className='bg-color field'
-                                    placeholder="Re-Enter Password"
-                                    type={showcnfPassword ? 'text' : 'password'}
-                                    label="Re-Enter Password"
-                                    inputProps={{ maxLength: 15, minLength:6 }}
-                                    InputLabelProps={{
-                                        shrink: true,
-                                    }}
-                                    InputProps={{
-                                        
-                                        endAdornment: (
-                                            <InputAdornment position="end">
-                                                <IconButton
-                                                    aria-label="toggle password visibility"
-                                                    onClick={handleClickShowcnfPassword}
-                                                    edge="end"
-                                                >
-                                                    {showcnfPassword ? <VisibilityOff /> : <Visibility />}
-                                                </IconButton>
-                                            </InputAdornment>
-                                        ),
-                                    }}
-                                    value={cnfpassword} onChange={(e) => setCnfPassword(e.target.value)}
-                                />
-                        
-                        </td>
-                            </tr>
-
-
 
                             <tr>
                                 <td className=' p-3 text-center' colSpan="5">
-                                   
+                                
                                     <Button variant='contained' onClick={submitHandler}>Submit</Button>
 
-                                    <Link to='/login' className='link ms-4'>Already have an account? SignIn here.</Link>
+                                    <Link to="/register" className='link ms-4'>Don't have an account? Register here.</Link>
+
 
                                 </td>
                             </tr>
@@ -238,6 +163,9 @@ const Register = () => {
                     </table>
 
                 </FormControl>
+                
+                <div className='register-img'><img src={loginimg}></img></div>
+
 
             </div>
 
@@ -245,4 +173,4 @@ const Register = () => {
     )
 }
 
-export default Register
+export default Login

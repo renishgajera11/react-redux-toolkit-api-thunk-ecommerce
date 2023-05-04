@@ -1,38 +1,41 @@
 import React from 'react'
 import './Header.css'
-import {Link} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 import ProductList from '../Productlist/ProductList';
 import MenFashion from '../MenFashion/MenFashion';
 import WomenFashion from '../WomenFashion/WomenFashion'
 import Jwellery from '../Jwellery/Jwellery';
 import Electronics from '../Electronics/Electronics';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import WishList from '../WishList/WishList';
 import CartList from '../CartList/CartList';
 import AdminPanel from '../Admin/AdminPanel';
+import { removeItem } from '../../app/slice/loginSlice';
 
 
 
 
 const Header = () => {
 
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
+
     const { WishlistItems } = useSelector((state) => state.wish);
     const { cartItems } = useSelector((state) => state.cart);
+    // const { loginData} = useSelector((state) =>state.login)
 
     const wishQuantity = WishlistItems.length;
     const cartQuantity = cartItems.length;
+
+    const logOutHandler = () =>{
+        dispatch(removeItem())
+        navigate('/login')
+    }
 
       
 
   return (
     <div>
-
-         
-
-        
-          
-        
-            
 
               <nav className="navbar navbar-expand-lg">
 
@@ -64,7 +67,7 @@ const Header = () => {
 
                                   <li className="nav-item dropdown mx-4">
 
-                                      <Link to="/" className="nav-link menu-item dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                      <Link  className="nav-link menu-item dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                         <b>Collections</b>
                                       </Link>
 
@@ -77,11 +80,11 @@ const Header = () => {
                                   </li>
 
                                   <li className="nav-item mx-4">
-                                      <Link to="/" className="nav-link menu-item" href="#"><b>Contact Us</b></Link>
+                                      <Link  className="nav-link menu-item" href="#"><b>Contact Us</b></Link>
                                   </li>
 
-                                  <li className="nav-item mx-4">
-                                      <Link to="/" className="nav-link menu-item" href="#"><b>Sign In</b></Link>
+                                  <li className="nav-item dropdown mx-4">
+                                      <Link  to='/login' className="nav-link menu-item" href="#" onClick={logOutHandler}><b>Log out</b></Link>
                                   </li>
 
                                   <li className="nav-item">

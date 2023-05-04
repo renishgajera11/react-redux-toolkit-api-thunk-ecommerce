@@ -6,6 +6,7 @@ import { removeItem } from '../../app/slice/WishListSlice';
 import { Button } from '@mui/material';
 import { Delete } from '@mui/icons-material';
 import ContactUs from '../ContactUs/ContactUs';
+import Header from '../Header/Header';
 
 
 const WishList = () => {
@@ -23,6 +24,11 @@ const WishList = () => {
 
 
   return (
+
+    <>
+
+    <Header/>
+    
     <div className='wishlist'>
 
         <div className='container pt-3'>
@@ -77,6 +83,8 @@ const WishList = () => {
         <ContactUs/>
       
     </div>
+
+    </>
   )
 }
 

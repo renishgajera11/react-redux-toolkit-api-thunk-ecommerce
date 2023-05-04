@@ -3,6 +3,7 @@ import wishReducer from '../app/slice/WishListSlice';
 import cartSlice from './slice/cartSlice';
 import apiSlice from './slice/apiSlice';
 import authSlice from './slice/authSlice';
+import loginSlice from './slice/loginSlice';
 
 
 
@@ -11,7 +12,8 @@ export const store = configureStore({
     wish: wishReducer,
     cart: cartSlice,
     api : apiSlice,
-    register:authSlice
+    register:authSlice,
+    Login:loginSlice
   },
   preloadedState:loadFromLocalStorage(),
 });

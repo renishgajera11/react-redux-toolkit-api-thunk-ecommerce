@@ -13,16 +13,15 @@ import CartList from './component/CartList/CartList';
 import AdminPanel from './component/Admin/AdminPanel';
 import { useEffect } from 'react';
 import Register from './component/Register/Register';
+import Login from './component/Login/Login';
 
 function App() {
 
-  useEffect(() => {
-    window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
-  }, []);
+
   return (
     <div className="App">
 
-      <Header/>
+      {/* <Header/> */}
       
       <Routes>
                   <Route path="/" element={<ProductList />} />
@@ -34,6 +33,7 @@ function App() {
                   <Route path="/cartlist" element={<CartList/>} />
                   <Route path="/admin" element={<AdminPanel/>} />
                   <Route path="/register" element={<Register/>} />
+                  <Route path="/login" element={<Login/>} />
         </Routes>
 
         

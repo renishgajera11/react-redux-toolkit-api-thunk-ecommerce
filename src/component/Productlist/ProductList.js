@@ -10,6 +10,9 @@ import SwiperBanner from '../Swiper/SwiperBanner';
 import { Button } from '@mui/material';
 import ContactUs from '../ContactUs/ContactUs';
 import VanillaTilt from 'vanilla-tilt';
+import Header from '../Header/Header';
+import CircularProgress from '@mui/material/CircularProgress';
+import Box from '@mui/material/Box';
 
 function Tilt(props) {
     const { options, ...rest } = props;
@@ -70,7 +73,9 @@ const ProductList = () => {
 
         <>
 
-            {loading ? (<div className='loading'>please wait... </div>) : (
+            <Header />
+
+            {loading ? (<Box className='loading' sx={{ display: 'flex' }}> <CircularProgress /> </Box>) : (
 
                 <>
 

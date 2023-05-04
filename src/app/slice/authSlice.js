@@ -4,7 +4,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 export const registerUser = createAsyncThunk('registerUser',async(result, {rejectWithValue})=>{
 
-    const response = await fetch('https://run.mocky.io/v3/3fe0f3af-b9c1-4a64-ad7a-b2d0de55e534',{
+    const response = await fetch('https://641451f936020cecfda538c5.mockapi.io/users',{
         method : 'POST',
         headers : {
             'content-type' : "application/json",

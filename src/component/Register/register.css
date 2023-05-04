@@ -1,17 +1,41 @@
 .register{
-    max-width: 1500px;
-    margin:0 auto;
-    margin-top: 80px;
+    /* margin-top: 80px; */
+    min-height: 100vh;
+    background-color: white;
     /* border: 1px solid red; */
    
 }
 
 .form{
-    width: 100%;
+    width: 50%;
     /* border: 1px solid blue !important; */
 }
 
+.link{
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+}
+
 .Table{
-    margin:0 auto;
+   margin: auto;
     /* border: 1px solid red;    */
+}
+
+.field{
+    width: 350px;
+}
+
+.register-container{
+    display: flex;
+    padding-top: 150px;
+}
+
+.register-img{
+    width: 50%;
+}
+
+.register-img img{
+    width: 80%;
+    object-fit: contain;
 }

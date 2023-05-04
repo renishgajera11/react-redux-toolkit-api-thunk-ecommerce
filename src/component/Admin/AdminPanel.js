@@ -18,6 +18,7 @@ import FormControl, { useFormControl } from '@mui/material/FormControl';
 import { createApi} from '../../app/slice/apiSlice';
 import {useDispatch, useSelector } from 'react-redux';
 import { updateApi } from '../../app/slice/apiSlice';
+import Header from '../Header/Header';
 
 const baseURl = "../../../public"
 
@@ -142,6 +143,11 @@ console.log(categorys);
         },
     ];
     return (
+
+        <>
+
+        <Header/>
+
         <div className='adminpanel'>
 
             <div className='container'>
@@ -316,6 +322,7 @@ console.log(categorys);
 
 
         </div>
+        </>
     )
 }
 

@@ -8,6 +8,9 @@ import SwiperBanner from '../Swiper/SwiperBanner';
 import { readApi } from '../../app/slice/apiSlice';
 import ContactUs from '../ContactUs/ContactUs';
 import { Button } from '@mui/material';
+import Header from '../Header/Header';
+import CircularProgress from '@mui/material/CircularProgress';
+import Box from '@mui/material/Box';
 
 
 
@@ -33,7 +36,9 @@ const MenFashion = () => {
     return (
         <div>
 
-            {loading ? (<div className='loading'>Please wait...</div>) : (
+        <Header/>
+
+            {loading ? (<Box className='loading' sx={{ display: 'flex' }}> <CircularProgress /> </Box>): (
 
                 <>
 

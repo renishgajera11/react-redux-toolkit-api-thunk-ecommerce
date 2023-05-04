@@ -8,6 +8,9 @@ import SwiperBanner from '../Swiper/SwiperBanner';
 import { readApi } from '../../app/slice/apiSlice';
 import ContactUs from '../ContactUs/ContactUs';
 import { Button } from '@mui/material';
+import Header from '../Header/Header';
+import CircularProgress from '@mui/material/CircularProgress';
+import Box from '@mui/material/Box';
 
 const Electronics = () => {
 
@@ -32,6 +35,8 @@ const Electronics = () => {
   return (
     <div>
 
+    <Header/>
+
         <SwiperBanner/>
 
           <div className='productlist'>
@@ -40,7 +45,7 @@ const Electronics = () => {
 
               <div className='product-container row'>
 
-                  { loading ? (<div className='loading'>Please Wait...</div>) :
+                  { loading ? (<Box className='loading' sx={{ display: 'flex' }}> <CircularProgress /> </Box>) :
                       data.filter(element=>element.category == "electronics").map((element) => {
                           return (
 

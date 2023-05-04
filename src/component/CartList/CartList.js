@@ -4,6 +4,9 @@ import { removeItem, incrementItem, decrementItem } from '../../app/slice/cartSl
 import { useDispatch, useSelector } from 'react-redux';
 import { Button } from '@mui/material';
 import ContactUs from '../ContactUs/ContactUs';
+import Header from '../Header/Header';
+import CircularProgress from '@mui/material/CircularProgress';
+import Box from '@mui/material/Box';
 
 const CartList = () => {
 
@@ -32,7 +35,9 @@ const CartList = () => {
 
     <>
 
-      {loading ? (<div className='loading'>please wait... </div>) : (
+    <Header/>
+
+      {loading ? (<Box className='loading' sx={{ display: 'flex' }}> <CircularProgress /> </Box>) : (
         <>
           <div className='cartlist'>
 

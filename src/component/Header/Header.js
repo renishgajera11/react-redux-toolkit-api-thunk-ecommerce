@@ -22,7 +22,9 @@ const Header = () => {
 
     const { WishlistItems } = useSelector((state) => state.wish);
     const { cartItems } = useSelector((state) => state.cart);
-    // const { loginData} = useSelector((state) =>state.login)
+    const { loginData} = useSelector((state) =>state.login)
+
+    console.log(loginData[0][0].name);
 
     const wishQuantity = WishlistItems.length;
     const cartQuantity = cartItems.length;
@@ -84,7 +86,14 @@ const Header = () => {
                                   </li>
 
                                   <li className="nav-item dropdown mx-4">
-                                      <Link  to='/login' className="nav-link menu-item" href="#" onClick={logOutHandler}><b>Log out</b></Link>
+                                      <Link  className="nav-link menu-item" role='button' data-bs-toggle="dropdown" aria-expanded="false" href="#" ><b>Hi, {loginData[0][0].name}</b></Link>
+
+                                      <ul className="dropdown-menu">
+                                          <li><Link to="/admin" className="dropdown-item my-2" href="#">Admin Pannel</Link></li>
+                                          <li><Link  to='/login' className="dropdown-item my-2" href="#" onClick={logOutHandler}>logout</Link></li>
+                                          {/* <li><Link to="/jwellery" className="dropdown-item my-2" href="#">Jwellery</Link></li>
+                                          <li><Link to="/electronics" className="dropdown-item my-2" href="#">Electronics</Link></li>  */}
+                                      </ul>
                                   </li>
 
                                   <li className="nav-item">

@@ -13,7 +13,7 @@ export const store = configureStore({
     cart: cartSlice,
     api : apiSlice,
     register:authSlice,
-    Login:loginSlice
+    login:loginSlice
   },
   preloadedState:loadFromLocalStorage(),
 });

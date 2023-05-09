@@ -1,8 +1,10 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
+
+
 const loginSlice = createSlice({
 
-    name : 'login',
+    name:"login",
     initialState:{
         loginData:[],
         loading:false,
